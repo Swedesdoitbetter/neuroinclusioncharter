@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Neuro Inclusion Charter</title>
+<meta name="description" content="Five commitments. One senior sponsor. One practical action. One annual review. A practical charter for neuroinclusive performance at work.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #222326;
+  --white: #ffffff;
+  --off-white: #EDECE8;
+  --blue: #0077C8;
+  --blue-dark: #005fa3;
+  --grey: #4A4F55;
+  --light-grey: #d8d6d0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #222326;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(34,35,38,0.97);
+  backdrop-filter: blur(8px);
+}
+
+.nav-logo { display: flex; align-items: center; gap: 1rem; }
+.nav-logo img { height: 48px; width: auto; }
+.nav-wordmark {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  padding-left: 1rem;
+  display: none;
+}
+@media (min-width: 640px) { .nav-wordmark { display: inline; } }
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--white); }
+
+.nav-cta {
+  background: #0077C8 !important;
+  color: var(--white) !important;
+  padding: 0.7rem 1.8rem !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.08em !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--blue-dark) !important; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  padding: 1.1rem 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.2s;
+  box-shadow: 0 10px 24px rgba(0, 119, 200, 0.22);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 119, 200, 0.32);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  padding: 1.05rem 2.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+}
+
+.section-title span { color: var(--blue); }
+
+.section-intro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--grey);
+  font-weight: 300;
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+/* HERO */
+.hero {
+  min-height: 72vh;
+  background: #222326;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem 6rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: 'ACT';
+  position: absolute;
+  bottom: -3rem;
+  right: -1rem;
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.2s forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4.4vw, 5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  max-width: 780px;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.4s forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 span { color: var(--blue); }
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+  max-width: 620px;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.6s forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.7s forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.8s forwards;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ONE SENTENCE STRIP */
+.one-sentence {
+  background: var(--blue);
+  padding: 2.2rem 6rem;
+  text-align: center;
+}
+
+.one-sentence p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* SECTION BASE */
+.section { padding: 7rem 6rem; }
+.section-dark { background: #222326; }
+.section-grey { background: var(--off-white); }
+.section-white { background: var(--white); }
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* COMMITMENTS */
+.commitments-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #ccc8be;
+}
+
+.commitment-row {
+  background: var(--white);
+  padding: 2rem 2.4rem;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.8rem;
+  align-items: flex-start;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.commitment-row:hover { border-left-color: var(--blue); }
+
+.commitment-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--off-white);
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commitment-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.4rem;
+}
+
+.commitment-desc {
+  font-size: 0.93rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.standard-block {
+  margin-top: 3rem;
+  background: #222326;
+  padding: 2.5rem 2.5rem;
+}
+
+.standard-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.2rem;
+}
+
+.standard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.standard-item {
+  border-top: 3px solid var(--blue);
+  padding-top: 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.4;
+}
+
+/* STEPS */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: #ccc8be;
+  margin-top: 1rem;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 2.2rem 1.8rem;
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.step-card:hover { border-top-color: var(--blue); }
+
+.step-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--blue);
+  margin-bottom: 0.8rem;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.step-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+}
+.step-link:hover { text-decoration: underline; }
+
+/* ACTION TABLE (card list) */
+.action-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #ccc8be;
+  margin-top: 1rem;
+}
+
+.action-row {
+  background: var(--white);
+  padding: 1.6rem 2rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.action-area {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.action-example {
+  font-size: 0.92rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* STATUS TABLE */
+.status-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #ccc8be;
+  margin-top: 1rem;
+}
+
+.status-card {
+  background: var(--white);
+  padding: 2.2rem 2rem;
+  border-top: 3px solid var(--blue);
+}
+
+.status-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 0.8rem;
+}
+
+.status-meaning {
+  font-size: 0.88rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.status-next {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* MEANS / NOT-MEANS */
+.means-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.means-card {
+  padding: 2.5rem;
+}
+
+.means-card.yes { background: var(--blue); }
+.means-card.no { background: var(--off-white); }
+
+.means-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+.means-card.yes h3 { color: var(--white); }
+.means-card.no h3 { color: var(--black); }
+
+.means-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+
+.means-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.means-card.yes li { color: rgba(255,255,255,0.9); }
+.means-card.no li { color: var(--grey); }
+
+.means-list li::before {
+  content: '→';
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.means-card.yes li::before { color: rgba(255,255,255,0.6); }
+.means-card.no li::before { color: var(--blue); }
+
+/* RESOURCES */
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: #ccc8be;
+  margin-top: 1rem;
+}
+
+.resource-card {
+  background: var(--white);
+  padding: 2.6rem;
+  border-top: 3px solid var(--blue);
+}
+
+.resource-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.resource-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 0.9rem;
+}
+
+.resource-desc {
+  font-size: 0.92rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+}
+
+.resource-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--black);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.resource-link:hover { background: var(--blue); }
+
+/* JOIN FORM */
+.join-section {
+  background: var(--blue);
+  padding: 7rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-section::before {
+  content: 'JOIN';
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(255,255,255,0.07);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.join-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.join-left h2 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 1.3rem;
+}
+
+.join-left p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.join-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 1.8rem 0 0;
+}
+
+.join-checklist li {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+}
+
+.join-checklist li::before { content: '✓'; font-weight: 800; color: var(--white); flex-shrink: 0; }
+
+.join-form {
+  background: var(--white);
+  padding: 2.8rem 2.4rem;
+}
+
+.join-form-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.6rem;
+}
+
+.join-form input, .join-form select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--light-grey);
+  background: var(--off-white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.join-form label.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--grey);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+
+.join-form label.checkbox-row input { width: auto; margin: 0.15rem 0 0; }
+
+.join-form button {
+  width: 100%;
+  margin-top: 0.6rem;
+}
+
+.join-form-note {
+  font-size: 0.75rem;
+  color: #9aa0a6;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* GOVERNANCE */
+.gov-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; margin: 1.5rem 0 2rem; }
+.gov-list li { display: flex; gap: 0.9rem; font-size: 0.93rem; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.7; }
+.gov-list li::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+.boundary-note {
+  background: rgba(0,119,200,0.12);
+  border-left: 4px solid var(--blue);
+  padding: 1.8rem 2.2rem;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* FINAL CTA */
+.final-cta {
+  background: #222326;
+  padding: 8rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: 'FORWARD';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-weight: 900;
+  color: rgba(255,255,255,0.025);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+}
+
+.final-cta-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+
+.final-cta-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+}
+
+.final-cta h2 {
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+
+.final-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* FOOTER */
+footer {
+  background: #1a1b1e;
+  padding: 5rem 6rem 2.5rem;
+  border-top: 3px solid #0077C8;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-logo img { height: 60px; width: auto; margin-bottom: 1.2rem; }
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  max-width: 260px;
+  font-weight: 300;
+}
+
+.footer-heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.88rem;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.22);
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1.5rem 1.5rem;
+    list-style: none;
+    background: rgba(34,35,38,0.98);
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; width: 100%; }
+
+  .hero { padding: 7rem 1.5rem 3.5rem; min-height: auto; }
+  .one-sentence { padding: 2rem 1.5rem; }
+  .section, .join-section, .final-cta { padding: 4rem 1.5rem; }
+
+  .commitment-row { grid-template-columns: 44px 1fr; padding: 1.5rem; }
+  .standard-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .action-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  .status-table { grid-template-columns: 1fr; }
+  .means-grid { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .join-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .gov-inner { grid-template-columns: 1fr; }
+
+  footer { padding: 4rem 1.5rem 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="./images/NN_alt_logo_2_.png" alt="Neuro NEDs">
+    <span class="nav-wordmark">The Neuro Inclusion Charter</span>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <ul class="nav-links">
+    <li><a href="#commitments">The Commitment</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#governance">Governance</a></li>
+    <li><a href="#join" class="nav-cta">Join the Charter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">The Neuro NEDs Charter for Neuroinclusive Performance</div>
+  <h1>Moving from <span>awareness</span> to action.</h1>
+  <p class="hero-sub">A practical commitment to better work, stronger performance and fairer opportunity. Easy to join. Clear about what it means. Strong enough to matter.</p>
+  <p class="hero-note">Signing is a commitment to act, learn and review progress. It is not an accreditation or a claim of perfection.</p>
+  <div class="hero-actions">
+    <a href="#join" class="btn-primary">Join the Charter →</a>
+    <a href="#commitments" class="btn-secondary">See the five commitments</a>
+  </div>
+</section>
+
+<!-- ONE SENTENCE -->
+<div class="one-sentence">
+  <p>We will listen, remove avoidable barriers, make support easier to access, equip managers to act and hold ourselves accountable for progress.</p>
+</div>
+
+<!-- COMMITMENTS -->
+<section class="section section-white" id="commitments">
+  <div class="container">
+    <span class="eyebrow reveal">The Commitment</span>
+    <h2 class="section-title reveal">Five commitments. One senior sponsor.<br>One practical action. <span>One annual review.</span></h2>
+    <p class="section-intro reveal">The Charter gives organisations an accessible way to begin or strengthen their approach to neuroinclusion. Every organisation starts from a different place. Every signatory commits to turn good intent into visible, accountable action, applied proportionately to its size, context, workforce and responsibilities.</p>
+
+    <div class="commitments-grid reveal">
+      <div class="commitment-row">
+        <div class="commitment-num">1</div>
+        <div>
+          <div class="commitment-title">Listen and create psychological safety</div>
+          <div class="commitment-desc">We will listen to neurodivergent people, involve them in relevant decisions and work towards conditions where people can discuss barriers, request support and contribute without unnecessary fear of judgement or disadvantage.</div>
+        </div>
+      </div>
+      <div class="commitment-row">
+        <div class="commitment-num">2</div>
+        <div>
+          <div class="commitment-title">Remove avoidable barriers</div>
+          <div class="commitment-desc">We will consider neuroinclusion across recruitment, communication, work design, working environments, performance, development and progression.</div>
+        </div>
+      </div>
+      <div class="commitment-row">
+        <div class="commitment-num">3</div>
+        <div>
+          <div class="commitment-title">Make support easier to access</div>
+          <div class="commitment-desc">We will use inclusive practices wherever possible and provide appropriate individual support and reasonable adjustments without creating unnecessary barriers to requesting help.</div>
+        </div>
+      </div>
+      <div class="commitment-row">
+        <div class="commitment-num">4</div>
+        <div>
+          <div class="commitment-title">Equip managers to act</div>
+          <div class="commitment-desc">We will help managers set clear expectations, communicate effectively, hold useful conversations, implement agreed support and seek advice when an issue falls outside their role.</div>
+        </div>
+      </div>
+      <div class="commitment-row">
+        <div class="commitment-num">5</div>
+        <div>
+          <div class="commitment-title">Lead, measure and improve</div>
+          <div class="commitment-desc">We will assign senior responsibility, select practical priorities, review relevant evidence and report on progress over time.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-block reveal">
+      <div class="standard-label">The minimum effective standard — an active signatory has</div>
+      <div class="standard-grid">
+        <div class="standard-item">Five accepted commitments</div>
+        <div class="standard-item">One named senior sponsor</div>
+        <div class="standard-item">One practical action</div>
+        <div class="standard-item">One annual review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-grey" id="how-it-works">
+  <div class="container">
+    <span class="eyebrow reveal">How The Charter Works</span>
+    <h2 class="section-title reveal">Simple to join. <span>Meaningful to keep.</span></h2>
+    <p class="section-intro reveal">Joining should be simple. Keeping the commitment meaningful requires one small activation step and one light annual review. The Charter does not require every request to be approved or every difficulty to be removed. It requires fair consideration, better-informed decisions and action on avoidable barriers.</p>
+
+    <div class="steps-grid reveal">
+      <div class="step-card">
+        <div class="step-num">01 — JOIN</div>
+        <div class="step-title">Two-minute registration</div>
+        <div class="step-desc">Complete the two-minute registration form and accept the five commitments.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02 — ACTIVATE WITHIN 30 DAYS</div>
+        <div class="step-title">Name your sponsor</div>
+        <div class="step-desc">Name a senior sponsor and day-to-day contact, choose one practical action and set a target date.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03 — ACT</div>
+        <div class="step-title">Use the free toolkit</div>
+        <div class="step-desc">Use the free Neuro Inclusion Toolkit and relevant resources to make progress on the selected action.</div>
+        <a href="#resources" class="step-link">Get the toolkit ↓</a>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04 — REVIEW ANNUALLY</div>
+        <div class="step-title">Reflect and reset</div>
+        <div class="step-desc">Complete a short progress review, reflect on what changed and select the next priority.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHOOSE AN ACTION -->
+<section class="section section-white">
+  <div class="container">
+    <span class="eyebrow reveal">Choose One Practical Action</span>
+    <h2 class="section-title reveal">Starting small <span>is acceptable.</span></h2>
+    <p class="section-intro reveal">Every signatory chooses at least one achievable action for its first 12 months. The action must be relevant, owned and capable of being reviewed. Organisations may select another action that advances one or more Charter commitments — purchasing a Neuro NEDs service is not a condition of signing.</p>
+
+    <div class="action-table reveal">
+      <div class="action-row"><div class="action-area">Employee voice</div><div class="action-example">Create or improve an accessible way for neurodivergent employees to contribute to relevant decisions.</div></div>
+      <div class="action-row"><div class="action-area">Working practices</div><div class="action-example">Introduce clearer standards for meetings, written actions, priorities or communication.</div></div>
+      <div class="action-row"><div class="action-area">Manager capability</div><div class="action-example">Give managers practical guidance, tools or applied development.</div></div>
+      <div class="action-row"><div class="action-area">Support and adjustments</div><div class="action-example">Review how employees request, receive and revisit workplace support.</div></div>
+      <div class="action-row"><div class="action-area">Recruitment and onboarding</div><div class="action-example">Review one stage for avoidable barriers and improve access.</div></div>
+      <div class="action-row"><div class="action-area">Work design and environment</div><div class="action-example">Review flexibility, cognitive load, sensory conditions or opportunities for job crafting.</div></div>
+      <div class="action-row"><div class="action-area">Performance and progression</div><div class="action-example">Review how expectations, feedback, development or promotion decisions are communicated and assessed.</div></div>
+      <div class="action-row"><div class="action-area">Data and accountability</div><div class="action-example">Establish a proportionate baseline, measure or reporting process.</div></div>
+      <div class="action-row"><div class="action-area">Structured insight</div><div class="action-example">Complete the Corporate NIIT or another suitable evidence-based organisational review.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section class="section section-grey">
+  <div class="container">
+    <span class="eyebrow reveal">Status That Means Something</span>
+    <h2 class="section-title reveal">Simple statuses. <span>Not awards.</span></h2>
+    <p class="section-intro reveal">The Charter uses simple participation statuses. They are not awards or maturity ratings.</p>
+
+    <div class="status-table reveal">
+      <div class="status-card">
+        <div class="status-name">Registered</div>
+        <div class="status-meaning">The organisation has joined and accepted the five commitments.</div>
+        <div class="status-next">Next: complete activation within 30 days</div>
+      </div>
+      <div class="status-card">
+        <div class="status-name">Active signatory</div>
+        <div class="status-meaning">A sponsor and contact are named and the first action has been selected.</div>
+        <div class="status-next">May use the approved Charter Signatory mark</div>
+      </div>
+      <div class="status-card">
+        <div class="status-name">Progress reviewed</div>
+        <div class="status-meaning">The annual review has been completed and the next priority selected.</div>
+        <div class="status-next">Charter status continues for the next period</div>
+      </div>
+    </div>
+
+    <div class="means-grid reveal">
+      <div class="means-card yes">
+        <h3>What signing means</h3>
+        <ul class="means-list">
+          <li>A public commitment to the five Charter principles.</li>
+          <li>Named accountability through a senior sponsor and day-to-day contact.</li>
+          <li>At least one practical action pursued during each 12-month period.</li>
+          <li>A short annual review and a renewed priority.</li>
+        </ul>
+      </div>
+      <div class="means-card no">
+        <h3>What signing does not mean</h3>
+        <ul class="means-list">
+          <li>That the organisation has been audited, certified or accredited by Neuro NEDs.</li>
+          <li>That every employee has the same experience or the organisation is fully neuroinclusive.</li>
+          <li>That signing provides legal assurance or proves compliance with every duty.</li>
+          <li>That every request must be approved or every difficulty can be removed.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="section section-white" id="resources">
+  <div class="container">
+    <span class="eyebrow reveal">Free To Use</span>
+    <h2 class="section-title reveal">Two things you can <span>use today.</span></h2>
+    <p class="section-intro reveal">Both are free, self-contained and yours to keep — read them before you sign, or use them without signing anything at all.</p>
+
+    <div class="resource-grid reveal">
+      <div class="resource-card">
+        <div class="resource-label">Read First</div>
+        <h3 class="resource-title">The Charter, in full</h3>
+        <p class="resource-desc">The five commitments, how activation and review work, and what signing does and does not mean — as a short document you can save, print or send to a colleague.</p>
+        <a href="./downloads/Neuro-NEDs-Charter.pdf" class="resource-link" download>Download the Charter (PDF) ↓</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-label">Start Here</div>
+        <h3 class="resource-title">The Neuro Inclusion Toolkit</h3>
+        <p class="resource-desc">Practical, worked exercises for individuals working out how they work best, and for organisations identifying their first avoidable barrier to remove. No email required.</p>
+        <a href="./downloads/Neuro-NEDs-Neuro-Inclusion-Toolkit.pdf" class="resource-link" download>Download the toolkit (PDF) ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join-section" id="join">
+  <div class="join-inner">
+    <div class="join-left reveal">
+      <span class="eyebrow" style="color: rgba(255,255,255,0.7);">Join The Charter</span>
+      <h2>Make neuroinclusion more than an intention.</h2>
+      <p>Registration takes around two minutes. Your organisation then has 30 days to activate its commitment by naming a senior sponsor, a day-to-day contact and one practical first action.</p>
+      <ul class="join-checklist">
+        <li>Organisation name</li>
+        <li>Your name and job title</li>
+        <li>Work email</li>
+        <li>Approximate organisation size</li>
+        <li>Confirmation that you are authorised to register the organisation</li>
+        <li>Agreement to the five Charter commitments</li>
+      </ul>
+    </div>
+    <div class="join-right">
+      <form class="join-form" action="mailto:info@neuroneds.com" method="post" enctype="text/plain">
+        <div class="join-form-label">Two-minute registration</div>
+        <input type="text" name="Organisation name" placeholder="Organisation name" required>
+        <input type="text" name="Your name and job title" placeholder="Your name and job title" required>
+        <input type="email" name="Work email" placeholder="Work email" required>
+        <select name="Approximate organisation size" required>
+          <option value="" disabled selected>Approximate organisation size</option>
+          <option>1–49 employees</option>
+          <option>50–249 employees</option>
+          <option>250–999 employees</option>
+          <option>1,000+ employees</option>
+        </select>
+        <label class="checkbox-row"><input type="checkbox" required> I confirm I am authorised to register this organisation.</label>
+        <label class="checkbox-row"><input type="checkbox" required> We agree to the five Charter commitments.</label>
+        <button type="submit" class="btn-primary">Join the Charter now</button>
+        <p class="join-form-note">Sends directly to info@neuroneds.com — we'll confirm your registration by email.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="section section-dark" id="governance">
+  <div class="container">
+    <span class="eyebrow reveal">Credibility, Governance And Review</span>
+    <h2 class="section-title reveal" style="color:#fff;">Our commitments <span>as Charter owner</span></h2>
+    <p class="section-intro reveal" style="color:rgba(255,255,255,0.55);">The Charter is an applied Neuro NEDs framework informed by evidence, lived experience and organisational practice. It is designed to promote credible progress without creating an unnecessary reporting burden.</p>
+
+    <ul class="gov-list reveal">
+      <li>Neuro NEDs owns and maintains the Charter, signatory rules, marks and associated methodology.</li>
+      <li>The Charter and toolkit will be reviewed periodically as evidence, language, law and organisational practice develop.</li>
+      <li>Neuro NEDs may suspend or remove signatory status where an organisation materially misrepresents its status, does not activate or review its commitment, or seriously undermines the Charter's integrity.</li>
+      <li>Aggregated or anonymised Charter information will only be used with appropriate privacy information and safeguards.</li>
+    </ul>
+
+    <div class="boundary-note reveal">
+      The Charter and its resources provide general organisational guidance. They do not replace legal, clinical, occupational-health or other appropriately qualified professional advice.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner reveal">
+    <div class="final-cta-eyebrow">Action, Not Awareness</div>
+    <h2>Better work. Stronger performance.<br>Fairer opportunity.</h2>
+    <div class="final-cta-actions">
+      <a href="#join" class="btn-primary">Join the Charter</a>
+      <a href="#resources" class="btn-secondary">Get the free toolkit</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="./images/NN_alt_logo_2_.png" alt="Neuro NEDs">
+      </div>
+      <p class="footer-tagline">The Neuro Inclusion Charter is owned and maintained by Neuro NEDs.</p>
+    </div>
+    <div>
+      <div class="footer-heading">This Page</div>
+      <ul class="footer-links">
+        <li><a href="#commitments">The Commitment</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#governance">Governance</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Get In Touch</div>
+      <ul class="footer-links">
+        <li><a href="mailto:info@neuroneds.com">info@neuroneds.com</a></li>
+        <li><a href="https://www.neuroneds.com">neuroneds.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Neuro NEDs. All rights reserved.</span>
+    <span>info@neuroneds.com</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.1 + 's';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
